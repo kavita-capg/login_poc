@@ -1,0 +1,26 @@
+<div class="container" *ngIf="currentUser">
+    <form #userForm="ngForm" (ngSubmit)="saveUser(currentUser)">
+        <div class="form-group">
+            <label for="first">First</label>
+            <input class="form-control" type="text" name="first" id="first" [(ngModel)]="currentUser.first">
+        </div>
+        <div class="form-group">
+            <label for="last">Last</label>
+            <input class="form-control" type="text" name="last" id="last" [(ngModel)]="currentUser.last">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" type="text" name="email" id="email" [(ngModel)]="currentUser.email">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input class="form-control" type="text" name="address" id="address" [(ngModel)]="currentUser.address">
+        </div>
+         <div class="form-group">
+            <label for="created">Created</label>
+            <input class="form-control" type="text" name="created" id="created" [(ngModel)]="currentUser.created">
+        </div>
+       
+        <button class="btn btn-primary" type="submit" [disabled]="!userForm.form.valid">Save</button>
+    </form>
+</div>

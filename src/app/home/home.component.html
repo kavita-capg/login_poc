@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First</th>
+                <th>Last</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of USERS" (click)="onSelect(user)">
+            <td>{{user.id}}</td>
+            <td>{{user.first}}</td>
+            <td>{{user.last}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.created}}</td>
+            <td class="action"><a [routerLink]="['/user',user.id]">Edit </a><a (click)="deleteProfile(user)">Delete</a></td>
+        </tr>
+        </tbody>
+        
+    </table>
+    <div *ngIf="selectedUser">{{selectedUser.name}}</div>
+</div>
